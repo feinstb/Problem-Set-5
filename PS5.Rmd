@@ -94,12 +94,13 @@ print(averageco2)
 #5 Make a barplot where you show the previous results–average CO2 emissions per capita
 #across continents in 1960 and 2016.
 
-#NEEDHELP
-ggplot(averageco2, aes(x = region, y = averageco2, fill = factor(time))) +
-geom_bar(stat = "identity", position = "dodge") +
-scale_fill_manual(values = c("blue", "orange")) +
-labs(x = "Continent", y = "Average CO2 emissions per capita", fill = "Year") +
-ggtitle("Average CO2 Emissions Per Capita") 
+averageco2 <-gm%>%
+group_by(region, time) %>%
+summarise(mean_co2 = mean(co2))
+averageco2 <-averageco2 %>% filter(time %in% c(1960, 2016))
+ggplot(co2_mean, aes(x = region, y = mean_co2, fill = factor(time))) +
+geom_bar(stat = "identity", position = "dodge") +labs(title = "Average CO2 Emissions",x = "Continent", y = "Average CO2 Emissions Per Capita",fill = "Year") +
+theme_minimal()
 
 #6  Which countries are the three largest, and three smallest CO2 emitters (in terms of CO2 per
 #capita) in 2019 for each continent? (Assume region is continent).
@@ -208,4 +209,4 @@ relative2019 <- us$ranks[us$time == 2019] / nrow(gm2019)
 relative1960
 relative2019
 
-#I have spent around 15 hours on this assignment.
+#I have spent around 20 hours on this assignment.
