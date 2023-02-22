@@ -109,7 +109,7 @@ theme_minimal()
 gm2019<-gm %>% 
 filter(time==2019 &!is.na(co2_PC)) 
 
-top3_smallest3 <- gm2019 %>%
+smallest <- gm2019 %>%
 group_by(region) %>%
 top_n(3, -co2_PC) %>%
 bind_rows(gm2019 %>%
