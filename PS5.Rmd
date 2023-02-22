@@ -127,7 +127,7 @@ arrange(co2_PC) %>%
 slice_tail(n=3) %>% 
 select(region,name)
 
-# The three largest from every continent are Angola, Burundi, Benin, Aruba, Argentina,Antigua and Barbuda, Afghanistan, UAE, Armenia, Albania, Andorra, Austria, America,Soma, Australia, and Fiji.
+#The three largest from every continent are Angola, Burundi, Benin, Aruba, Argentina,Antigua and Barbuda, Afghanistan, UAE, Armenia, Albania, Andorra, Austria, America,Soma, Australia, and Fiji.
 
 #The 3 smallest from every continent are South Africa, Zambia, Zimbabwe, Venezuela, Virgin Islands (British), Virgin Islands (U.S), Uzbekistan, Viet Nam, Yemen, Slovenia, Sweden, Ukraine, Tuvalu, Vanuatu, Samoa.
 
